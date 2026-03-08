@@ -14,3 +14,4 @@ enum Direction {
 
 console.log(output);
 console.log(output2);
+

@@ -8,5 +8,13 @@ import { Component } from "@angular/core";
 })
 
 export class HomeComponent {
-    
+    welcomeMessage = 'Welcome to our game store!';
+    description = 'We are the best selling store.';
+
+    features = [
+        'well established',
+        'good sells',
+        'big smile',
+        'happies'
+    ];
 }

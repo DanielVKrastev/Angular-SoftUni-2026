@@ -1,0 +1,21 @@
+.app-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    background: #1a1a2e;
+    color: white;
+    padding: 18px 24px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}

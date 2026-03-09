@@ -1,0 +1,12 @@
+<div class="games-container">
+    <h2>List of games</h2>
+
+    <div class="games-grid">
+        @for (game of games; track game.id) {
+            <div>
+                <h3>{{game.title}} - {{game.id}}</h3>
+                <p>for the price of ${{game.price}}</p>
+            </div>
+        }
+    </div>
+</div>

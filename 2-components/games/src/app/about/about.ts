@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
-export class About {
+export class About implements OnInit, OnDestroy{
   companyName = 'Games Depot';
   foundYear = '2020'
 
@@ -15,7 +15,14 @@ export class About {
     name: string,
     email: string
   } | null = {
-    name: 'Daniel',
-    email: 'daniel@mail.com'
+      name: 'Daniel',
+      email: 'daniel@mail.com'
+    }
+
+  ngOnInit() {
+    console.log('CREATED');
+  }
+  ngOnDestroy() {
+    console.log('DELETED');
   }
 }

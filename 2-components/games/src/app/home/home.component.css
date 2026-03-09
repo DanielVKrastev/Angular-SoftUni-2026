@@ -1,0 +1,14 @@
+.home{
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.home h2{
+    color: #1a1a2e;
+    margin-bottom: 6px;
+}
+
+.home p{
+    color:#555;
+}

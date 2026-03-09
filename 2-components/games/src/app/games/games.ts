@@ -11,6 +11,7 @@ import { GameCard } from '../game-card/game-card';
 })
 export class Games implements OnInit, OnDestroy {
   games: Game[] = [];
+  cart: Game[] = [];
 
   ngOnInit() {
     console.log('Games Component is created');
@@ -44,6 +45,12 @@ export class Games implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     console.log('Games Component is deleted.');
+    
+  }
+
+  onAddToCart(game: Game) {
+    this.cart.push(game);
+    console.log(`${game.title} is added to the cart.`);
     
   }
 }

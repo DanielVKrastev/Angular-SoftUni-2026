@@ -10,4 +10,9 @@ import { Game } from '../models/game.model';
 })
 export class GameCard {
   @Input() game!: Game;
+  @Output() addToCart = new EventEmitter<Game>();
+  
+  onBuyClick(){
+    this.addToCart.emit(this.game);
+  }
 }

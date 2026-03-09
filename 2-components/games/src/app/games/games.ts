@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Game } from '../models/game.model';
+import { GameCard } from '../game-card/game-card';
 
 @Component({
   selector: 'app-games',
   standalone: true,
-  imports: [],
+  imports: [GameCard],
   templateUrl: './games.html',
   styleUrl: './games.css',
 })

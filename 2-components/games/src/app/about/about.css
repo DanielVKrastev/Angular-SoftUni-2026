@@ -1,0 +1,14 @@
+.about{
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.about h2{
+    color: #1a1a2e;
+    margin-bottom: 6px;
+}
+
+.about p{
+    color:#555;
+}

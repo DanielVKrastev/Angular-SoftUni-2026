@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
-export class About {}
+export class About {
+  companyName = 'Games Depot';
+  foundYear = '2020'
+
+  manager: {
+    name: string,
+    email: string
+  } | null = {
+    name: 'Daniel',
+    email: 'daniel@mail.com'
+  }
+}

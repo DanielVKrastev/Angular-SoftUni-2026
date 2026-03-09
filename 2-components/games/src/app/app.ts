@@ -11,4 +11,10 @@ import { About } from './about/about';
 })
 
 export class App {
+  title = 'Hello there';
+  currentView = 'home';
+
+  changeView(view: string){
+    this.currentView  = view;
+  }
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { UserItemComponent } from './user-item/user-item.component';
 import { SimpleUser } from '../types';
 
@@ -8,8 +8,14 @@ import { SimpleUser } from '../types';
   imports: [UserItemComponent],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush, // lock component
+  changeDetection: ChangeDetectionStrategy.OnPush, // (OnPush)->lock component (Defaul)->unlock
 })
 export class UserListComponent {
   @Input('users') usersList: SimpleUser[] = [];
+  
+  constructor(private cd: ChangeDetectorRef) {}
+
+  refreshList(){
+    this.cd.detectChanges();
+  }
 }

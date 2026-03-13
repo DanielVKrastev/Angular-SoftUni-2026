@@ -3,4 +3,8 @@
   <button (click)="handleClick()">Click</button>
 
   <app-user-list [users]="appUsers"/>
+
+  <input type="text" name="name" placeholder="name" #inputName>
+  <input type="number" name="age" placeholder="age" #inputAge>
+  <button (click)="addUser(inputName, inputAge)">Add User</button>
 </div>

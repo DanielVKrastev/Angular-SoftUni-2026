@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
+import { SimpleUser } from './types';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,11 @@ import { UserListComponent } from './user-list/user-list.component';
 })
 export class AppComponent {
   title = 'demo-app';
+  appUsers: SimpleUser[] = [
+    {name: 'Daniel', age: 12},
+    {name: 'Anna', age: 24},
+    {name: 'Maria', age: 34},
+  ]
 
   handleClick() {
     this.title = 'ZDR';

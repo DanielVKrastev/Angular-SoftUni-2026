@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { UserItemComponent } from './user-item/user-item.component';
 import { SimpleUser } from '../types';
 
@@ -10,12 +10,23 @@ import { SimpleUser } from '../types';
   styleUrl: './user-list.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush, // (OnPush)->lock component (Defaul)->unlock
 })
-export class UserListComponent {
+export class UserListComponent implements OnChanges {
   @Input('users') usersList: SimpleUser[] = [];
-  
-  constructor(private cd: ChangeDetectorRef) {}
 
-  refreshList(){
+  constructor(private cd: ChangeDetectorRef) {
+    /*
+      setInterval(() => {
+        this.cd.detectChanges();
+      }, 5000);
+      */
+  }
+
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('changes', changes);
+  }
+
+  refreshList() {
     this.cd.detectChanges();
   }
 }

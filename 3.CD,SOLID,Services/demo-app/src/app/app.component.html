@@ -2,9 +2,9 @@
   <h1>Hello, Angular! {{ title }}</h1>
   <button (click)="handleClick()">Click</button>
 
-  <app-user-list [users]="appUsers"/>
+  <app-user-list [users]="users"/>
 
   <input type="text" name="name" placeholder="name" #inputName>
   <input type="number" name="age" placeholder="age" #inputAge>
-  <button (click)="addUser(inputName, inputAge)">Add User</button>
+  <button (click)="addSimpleUser(inputName, inputAge)">Add User</button>
 </div>

@@ -1,16 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { SimpleUser } from '../types';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root'  //global
 })
-export class UserService {
+export class UserService implements OnDestroy {
   appUsers: SimpleUser[] = [
     { name: 'Daniel', age: 12 },
     { name: 'Anna', age: 24 },
     { name: 'Maria', age: 34 },
   ]
+
   constructor() { }
+
+    ngOnDestroy(): void {
+    // Unsubscribe from events
+  }
 
    addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
     // console.log(inputName.value);

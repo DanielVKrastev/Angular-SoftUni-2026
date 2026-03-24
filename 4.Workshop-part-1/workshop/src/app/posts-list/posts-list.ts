@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../apiService';
+import { Post } from '../types/post';
 
 @Component({
   selector: 'app-posts-list',
@@ -8,6 +9,7 @@ import { ApiService } from '../apiService';
   styleUrl: './posts-list.css',
 })
 export class PostsList implements OnInit {
+  posts: Post[] = [];
   constructor(private apiService: ApiService) {
 
   }
@@ -15,7 +17,7 @@ export class PostsList implements OnInit {
   ngOnInit(): void {
     this.apiService.getPosts(5).subscribe(posts => {
       console.log(posts);
-      
+      this.posts = posts;
     })
   }
 }

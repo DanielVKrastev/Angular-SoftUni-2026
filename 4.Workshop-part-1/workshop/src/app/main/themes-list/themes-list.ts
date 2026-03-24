@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { ApiService } from '../apiService';
-import { Theme } from '../types/themes';
-import { Loader } from '../shared/loader/loader';
+import { ApiService } from '../../apiService';
+import { Theme } from '../../types/themes';
+import { Loader } from '../../shared/loader/loader';
 
 @Component({
   selector: 'app-themes-list',

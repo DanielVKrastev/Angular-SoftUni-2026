@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl: 'https://workshop-angular-feb-2026-default-rtdb.europe-west1.firebasedatabase.app',
+    apiUrl: 'http://localhost:3000/api',
 };

@@ -1,5 +1,10 @@
 <!-- aside component  -->
 <aside>
+    @if (isLoading) {
+    <div>
+        <app-loader />
+    </div>
+    }@else {
     <div class="aside">
         <h2 class="title">
             Recent posts
@@ -8,7 +13,7 @@
             @for (p of posts; track $index) {
             <div class="aside-theme">
                 <a href="#">
-                    <h3>{{p.themeId.themeName}} </h3>
+                    <h3>{{p.themeId?.themeName}} </h3>
                     <p>{{p.userId.username}}</p>
                     <p><span>{{p.created_at}}</span></p>
                 </a>
@@ -17,4 +22,5 @@
 
         </div>
     </div>
+    }
 </aside>

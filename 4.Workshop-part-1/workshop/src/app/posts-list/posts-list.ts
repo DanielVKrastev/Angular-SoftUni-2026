@@ -13,8 +13,8 @@ export class PostsList implements OnInit {
   }
 
   ngOnInit(): void {
-    this.apiService.getPosts().subscribe(p => {
-      console.log(p);
+    this.apiService.getPosts(5).subscribe(posts => {
+      console.log(posts);
       
     })
   }

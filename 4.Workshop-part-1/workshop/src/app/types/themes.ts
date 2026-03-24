@@ -1,13 +1,12 @@
-import { Theme } from "./themes"
 import { User } from "./user"
 
-export interface Post {
-    "likes": String[],
+export interface Theme {
+    "subscribers": String[],
+    "posts": String[],
     "_id": String,
-    "text": String,
+    "themeName": String,
     "userId": User,
-    "themeId": Theme,
     "created_at": String,
     "updatedAt": String,
     "__v": Number
-  }
+}

@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { ApiService } from '../../apiService';
-import { Post } from '../../types/post';
-import { Loader } from '../../shared/loader/loader';
+import { ApiService } from '../apiService';
+import { Post } from '../types/post';
+import { Loader } from '../shared/loader/loader';
 
 @Component({
   selector: 'app-posts-list',

@@ -7,6 +7,7 @@ import { Profile } from './user/profile/profile';
 import { AddTheme } from './theme/add-theme/add-theme';
 import { MainComponent } from './main/main.component';
 import { CurrentTheme } from './theme/current-theme/current-theme';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,7 +22,7 @@ export const routes: Routes = [
         { path: '', component: MainComponent },
         { path: ':themeId', component: CurrentTheme },
     ] },
-    { path: 'add-theme', component: AddTheme },
+    { path: 'add-theme', component: AddTheme, canActivate: [AuthGuard] },
     //
 
     { path: '404', component: Error },

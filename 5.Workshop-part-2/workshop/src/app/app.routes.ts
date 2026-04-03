@@ -6,6 +6,7 @@ import { Register } from './user/register/register';
 import { Profile } from './user/profile/profile';
 import { ThemesList } from './theme/themes-list/themes-list';
 import { AddTheme } from './theme/add-theme/add-theme';
+import { MainComponent } from './main/main.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,7 +17,7 @@ export const routes: Routes = [
     { path: 'profile', component: Profile },
     ///
     // Theme routing
-    { path: 'themes', component: ThemesList },
+    { path: 'themes', component: MainComponent },
     { path: 'add-theme', component: AddTheme },
     //
 

@@ -18,7 +18,7 @@ export class PostsList implements OnInit {
 
   ngOnInit(): void {
     this.apiService.getPosts(5).subscribe(posts => {
-      console.log(posts);
+     // console.log(posts);
       this.posts = posts;
       this.isLoading = false;
       this.cd.detectChanges();

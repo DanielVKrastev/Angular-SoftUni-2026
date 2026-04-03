@@ -2,12 +2,12 @@ import { Theme } from "./themes"
 import { User } from "./user"
 
 export interface Post {
-    "likes": String[],
-    "_id": String,
-    "text": String,
+    "likes": string[],
+    "_id": string,
+    "text": string,
     "userId": User,
     "themeId": Theme,
-    "created_at": String,
-    "updatedAt": String,
-    "__v": Number
+    "created_at": string,
+    "updatedAt": string,
+    "__v": number
   }

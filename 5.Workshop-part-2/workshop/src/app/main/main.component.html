@@ -1,4 +1,9 @@
 <div class="container">
+    @if (!isLoggedIn) {
+    <app-welcome-message />
+    } @else {
     <app-themes-list />
     <app-posts-list />
+    }
+
 </div>

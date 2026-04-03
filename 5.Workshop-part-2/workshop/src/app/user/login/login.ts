@@ -4,6 +4,7 @@ import { UserService } from '../user';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   imports: [RouterLink],
   templateUrl: './login.html',
   styleUrl: './login.css',

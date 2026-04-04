@@ -1,1 +1,31 @@
-<p>login works!</p>
+<!-- Template Driven -->
+<div class="container">
+    <h3>Login Form:</h3>
+    <form #loginForm="ngForm" (ngSubmit)="formSubmitHandler()">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+            type="text" 
+            id="email" 
+            name="email" 
+            ngModel 
+            #emailInput="ngModel" 
+            email 
+            required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            ngModel 
+            #passwordInput="ngModel" 
+            required>
+        </div>
+
+        <button>Login</button>
+    </form>
+
+</div>

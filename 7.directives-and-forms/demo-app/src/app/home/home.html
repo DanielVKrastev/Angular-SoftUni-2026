@@ -1,5 +1,5 @@
 <!--html attribute-->
-<p appHighLight>home works!</p> 
+<p appHighLight>home works!</p>
 <p appHighLight>home works!</p>
 
 <hr />
@@ -8,5 +8,29 @@
 
 <hr />
 
+<!--
 <p [ngStyle]="{color: color}">Lorem asdasdasdafga</p>
 <p>Lorem asdasdasdafga</p>
+-->
+
+<div *ngIf="true">
+    <div>Simple div 1</div>
+    <div>Simple div 2</div>
+</div>
+
+<ng-template [ngIf]="true">
+    <div>
+        <div>Simple div 3</div>
+        <div>Simple div 4</div>
+    </div>
+</ng-template>
+
+<ul>
+    @for (item of [1,2,3,4]; track $index) {
+        <li>{{item}} for item</li>
+    }
+</ul>
+
+<ul>
+    <li *ngFor="let item of [1,2,3,4]">{{item}} - item</li>
+</ul>

@@ -13,6 +13,7 @@
 <p>Lorem asdasdasdafga</p>
 -->
 
+<!--
 <div *ngIf="true">
     <div>Simple div 1</div>
     <div>Simple div 2</div>
@@ -34,3 +35,13 @@
 <ul>
     <li *ngFor="let item of [1,2,3,4]">{{item}} - item</li>
 </ul>
+-->
+
+<!-- Custom Directive -->
+ <button (click)="toggleIsShow()">Toggle</button>
+ <div *appMyStructural="isShown">#1 - Testing custom strcutural Directives</div>
+
+ <ng-template [appMyStructural]="isShown" let-testMe="myCustomValue">
+    <div>#2 - Testing custom strcutural Directives</div>
+    <div>let-testMe: {{ testMe }}</div>
+ </ng-template>

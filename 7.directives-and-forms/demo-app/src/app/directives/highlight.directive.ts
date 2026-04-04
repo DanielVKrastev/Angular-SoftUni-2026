@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnDestroy, OnInit, Renderer2 } from "@angular/core";
+import { Directive, ElementRef, HostListener, OnDestroy, OnInit, Renderer2 } from "@angular/core";
 
 type MyVoid = () => void;
 
@@ -7,6 +7,11 @@ type MyVoid = () => void;
     standalone: true,
 })
 export class HighLightDirective implements OnInit, OnDestroy {
+    @HostListener('mouseenter', ['$event']) mouseEnterHandler2(e:MouseEvent)  {
+        console.log('Mouse actived');
+        
+    };
+
     unsubEventArray: (() => void)[] = [];
     constructor(private elRef: ElementRef, private renderer: Renderer2) { }
 

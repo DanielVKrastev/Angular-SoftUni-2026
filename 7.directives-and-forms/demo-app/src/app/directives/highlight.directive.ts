@@ -47,6 +47,7 @@ export class HighLightDirective implements OnInit, OnDestroy {
         this.renderer.removeClass(this.elRef.nativeElement, 'highlight');
     }
 
+    //destroy
     ngOnDestroy(): void {
         console.log('On destroy Invoked!');
         console.log(this.unsubEventArray);

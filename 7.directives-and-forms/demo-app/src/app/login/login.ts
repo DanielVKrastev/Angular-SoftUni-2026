@@ -1,27 +1,26 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { MaxCountDirective } from '../directives/max-count.directivets';
+
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
-  templateUrl: './login.html',
   standalone: true,
+  imports: [FormsModule, MaxCountDirective],
+  templateUrl: './login.html',
   styleUrl: './login.css',
 })
 export class Login {
   @ViewChild('loginForm') form: NgForm | undefined;
 
   formSubmitHandler() {
-
-    const form = this.form;
+    const form = this.form!;
 
     if (form?.invalid) {
-      console.log('this form is invalid!');
+      console.log('This form is invalid!');
       return;
     }
 
-    console.log('Form has been submited');
-    console.log(form?.value); //controls
-
+    form.reset();
   }
 }

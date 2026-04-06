@@ -1,0 +1,8 @@
+@if (!isLoggedIn) {
+<app-welcome-message />
+} @else {
+<div class="container">
+    <app-themes-list />
+    <app-posts-list />
+</div>
+}

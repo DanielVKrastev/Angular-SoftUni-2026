@@ -42,7 +42,12 @@ export class Profile {
 
   onCancel(event: Event) {
     event.preventDefault();
-    this.form.updateValueAndValidity();
+
+    //reset form after closing
+    this.form.controls['username'].setValue(this.profileDetails.username);
+    this.form.controls['email'].setValue(this.profileDetails.email);
+    this.form.controls['tel'].setValue(this.profileDetails.tel);
+    
     
     this.toggleEditMode();
   }

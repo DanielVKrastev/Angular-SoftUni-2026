@@ -26,7 +26,7 @@
             <form [formGroup]="form" (ngSubmit)="handleSaveProfile()">
                 <div class="flex">
                     <p>Username: </p>
-                    <input type="text" name="username" id="username" value="asd" formControlName="username" minlength="5">
+                    <input type="text" name="username" id="username" formControlName="username" minlength="5" [value]="profileDetails.username">
                 </div>
                     @if(form.get('username')?.touched){
                     <div>

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { RouterLink } from '@angular/router';
 import { emailValidator } from '../../utils/email.validator';
 import { EMAIL_DOMAINS } from '../../../constants';
+import { matchPasswordsValidator } from '../../utils/match-passwords.validator';
 
 @Component({
   selector: 'app-register',
@@ -16,9 +17,13 @@ export class Register {
       username: new FormControl('', [Validators.required, Validators.minLength(5)]),
       email: new FormControl('', [Validators.required, emailValidator(EMAIL_DOMAINS)]),
       tel: new FormControl(''),
-      // TODO: put password in Group
-      password: new FormControl('', [Validators.required]),
-      rePassword: new FormControl('', [Validators.required]),
+      passGroup: new FormGroup({
+        password: new FormControl('', [Validators.required]),
+        rePassword: new FormControl('', [Validators.required]),
+      },
+    {
+      validators: [matchPasswordsValidator('password', 'rePassword')],
+    }),
     }
   );
 
@@ -41,6 +46,10 @@ export class Register {
       this.form.get('email')?.touched &&
       this.form.get('email')?.errors?.['emailValidator']
     );
+  }
+
+  get passGroup(){
+    return this.form.get('passGroup');
   }
 
   register(){

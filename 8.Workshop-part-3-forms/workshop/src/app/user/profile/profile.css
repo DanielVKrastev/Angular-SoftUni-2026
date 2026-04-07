@@ -91,8 +91,14 @@
     background-color: #e4e3e3;
 }
 
+.btn-wrapper{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
 .red-button {
-    background-color: #d9534f;
+    background-color: #d9534f!important;
     color: white;
     border-radius: 0.5em;
     padding: 0.5em 1.5em;
@@ -103,4 +109,9 @@
     color: white;
     border-radius: 0.5em;
     padding: 0.5em 1.5em;
+    margin-left: 10px;
+}
+
+.error{
+    color: red;
 }

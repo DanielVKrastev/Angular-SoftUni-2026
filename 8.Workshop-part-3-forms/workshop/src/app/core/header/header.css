@@ -92,3 +92,7 @@ justify-content: center;
     scale: 1.1;
     
 }
+
+.user-profile-btn{
+    min-width: 150px;
+}

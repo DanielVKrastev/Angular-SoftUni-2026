@@ -51,4 +51,10 @@ export class UserService {
     this.user = null;
     localStorage.removeItem(this.USER_KEY);
   }
+
+  getProfile() {
+    return this.http
+      .get<UserForAuth>('/api/users/profile')
+      .pipe(tap((user) => this.user$$.next(user)));;
+  }
 }

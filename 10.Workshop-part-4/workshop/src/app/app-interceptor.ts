@@ -10,7 +10,6 @@ export const appInterceptor: HttpInterceptorFn = (req, next) => {
       url: req.url.replace(API, apiUrl),
     });
   }
-  console.log(req);
   
   return next(req);
 };

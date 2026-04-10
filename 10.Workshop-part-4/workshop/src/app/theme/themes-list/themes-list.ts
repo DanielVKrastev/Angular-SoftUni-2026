@@ -4,10 +4,11 @@ import { Theme } from '../../types/themes';
 import { Loader } from '../../shared/loader/loader';
 import { RouterLink } from "@angular/router";
 import { SlicePipe } from '../../shared/pipes/slice-pipe';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-themes-list',
-  imports: [Loader, RouterLink, SlicePipe],
+  imports: [Loader, RouterLink, SlicePipe, DatePipe],
   templateUrl: './themes-list.html',
   styleUrl: './themes-list.css',
 })

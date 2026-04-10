@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { email } from '@angular/forms/signals';
 import { emailValidator } from '../../utils/email.validator';
 import { EMAIL_DOMAINS } from '../../../constants';
 import { ProfileDetails } from '../../types/user';
+import { UserService } from '../user';
 
 @Component({
   selector: 'app-profile',
@@ -12,13 +13,13 @@ import { ProfileDetails } from '../../types/user';
   templateUrl: './profile.html',
   styleUrl: './profile.css',
 })
-export class Profile {
+export class Profile implements OnInit{
   isEditMode: boolean = false;
 
   profileDetails:ProfileDetails = {
-    username: 'Daniel',
-    email: 'danielk@gmail.com',
-    tel: '123-123-123',
+    username: '',
+    email: '',
+    tel: '',
   }
 
   form = new FormGroup({
@@ -26,6 +27,18 @@ export class Profile {
     email: new FormControl(this.profileDetails.email, [Validators.required, emailValidator(EMAIL_DOMAINS)]),
     tel: new FormControl(this.profileDetails.tel),
   });
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    const { username, email, tel} = this.userService?.user!;
+    
+    this.profileDetails = { username, email, tel: tel! };
+
+    this.form.setValue({
+      username, email, tel: tel!
+    });
+  }
 
   toggleEditMode() {
     this.isEditMode = !this.isEditMode;
@@ -38,6 +51,12 @@ export class Profile {
     }
 
     this.profileDetails = this.form.value as ProfileDetails;
+
+    const {username, email, tel} = this.profileDetails;
+    this.userService.updateProfile(username, email, tel).subscribe(() => {
+      this.toggleEditMode();
+    });
+
   }
 
   onCancel(event: Event) {

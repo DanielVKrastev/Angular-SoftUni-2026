@@ -40,5 +40,14 @@ export class ApiService {
     return this.http.put<Theme>(`/api/themes/${themeId}`, payload);
   }
 
+  //Post theme - http.put
+  updatePost(themeId:string, postId: string,) {
+    const payload = { }
+    return this.http.put<Theme>(`/api/themes/${themeId}/posts:${postId}`, payload);
+  }
+
   //Delete theme - http.delete theme ID
+  deletePost(themeId:string, postId: string,) {
+    return this.http.delete<Theme>(`/api/themes/${themeId}/posts:${postId}`);
+  }
 }

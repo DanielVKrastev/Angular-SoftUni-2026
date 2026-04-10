@@ -8,7 +8,7 @@ import { BehaviorSubject, tap } from 'rxjs';
 })
 export class UserService {
   private user$$ = new BehaviorSubject<UserForAuth | null>(null);
-  private user$ = this.user$$.asObservable();
+  public user$ = this.user$$.asObservable();
 
   USER_KEY = '[user]';
   user: UserForAuth | null = null;

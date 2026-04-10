@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { UserForAuth } from '../types/user';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class UserService implements OnDestroy{
   USER_KEY = '[user]';
   user: UserForAuth | null = null;
+  userSubsription = null;
 
   get isLogged(): boolean{
     return !!this.user;
@@ -39,5 +40,9 @@ export class UserService {
   logout() {
     this.user = null;
     localStorage.removeItem(this.USER_KEY);
+  }
+
+  ngOnDestroy(): void {
+    
   }
 }

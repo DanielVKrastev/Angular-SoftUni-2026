@@ -2,10 +2,11 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ApiService } from '../apiService';
 import { Post } from '../types/post';
 import { Loader } from '../shared/loader/loader';
+import { ElapsedTimePipe } from '../shared/pipes/elapsed-time-pipe';
 
 @Component({
   selector: 'app-posts-list',
-  imports: [Loader],
+  imports: [Loader, ElapsedTimePipe],
   templateUrl: './posts-list.html',
   styleUrl: './posts-list.css',
 })

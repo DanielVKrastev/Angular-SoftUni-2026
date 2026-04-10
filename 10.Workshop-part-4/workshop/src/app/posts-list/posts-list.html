@@ -15,7 +15,7 @@
                 <a href="#">
                     <h3>{{p.themeId.themeName}} </h3>
                     <p>{{p.userId.username}}</p>
-                    <p><span>{{p.created_at}}</span></p>
+                    <p><span>{{p.created_at | elapsedTime }}</span></p>
                 </a>
             </div>
             }

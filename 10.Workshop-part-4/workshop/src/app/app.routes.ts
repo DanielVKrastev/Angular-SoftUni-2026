@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
-import { Error } from './error/error';
+import { PageNotFoundComponent } from './error/error';
 import { Login } from './user/login/login';
 import { Register } from './user/register/register';
 import { Profile } from './user/profile/profile';
@@ -8,6 +8,7 @@ import { AddTheme } from './theme/add-theme/add-theme';
 import { MainComponent } from './main/main.component';
 import { CurrentTheme } from './theme/current-theme/current-theme';
 import { AuthGuard } from './guards/auth.guard';
+import { ErrorMsgComponent } from './core/error-msg/error-msg';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,7 +25,7 @@ export const routes: Routes = [
     ] },
     { path: 'add-theme', component: AddTheme, canActivate: [AuthGuard] },
     //
-
-    { path: '404', component: Error },
+    { path: 'error', component: ErrorMsgComponent },
+    { path: '404', component: PageNotFoundComponent },
     { path: '**', redirectTo: '/404' },
 ];

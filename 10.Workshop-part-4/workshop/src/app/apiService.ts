@@ -32,4 +32,8 @@ export class ApiService {
     const payload = { themeName, postText }
     return this.http.post<Theme>(`/api/themes`, payload);
   }
+
+  //CRUD operations
+  //Update theme - http.put
+  //Delete theme - http.delete theme ID
 }
